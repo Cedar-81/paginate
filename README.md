@@ -1,6 +1,6 @@
 # Paginate
 
-Paginate-text is a JavaScript library for paginating text using HTML canvas. It allows users to change the font, font size, line height, and more.
+Paginate is a JavaScript library for paginating text using HTML canvas. It allows users to change the font, font size, line height, and more.
 
 ## Getting Started
 
