@@ -17,13 +17,13 @@ Before you get started, make sure you have Node.js and npm (Node Package Manager
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/PaginatorJS.git
+   git clone https://github.com/Cedar-81/paginate.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd PaginatorJS
+   cd Paginator
    ```
 
 3. Install the required development dependencies (TypeScript):
@@ -73,6 +73,3 @@ If you would like to contribute to PaginatorJS, please follow our [contributing 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
-
-You can copy and paste this markdown directly into your `README.md` file.
