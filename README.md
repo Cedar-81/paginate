@@ -56,7 +56,7 @@ Before you get started, make sure you have Node.js and npm (Node Package Manager
 To use PaginatorJS in your own HTML project, include the generated JavaScript file in your HTML, and follow the usage instructions mentioned in the previous README example.
 
 ```html
-<script src="dist/paginator.js"></script>
+<script src="./dist/paginator.js"></script>
 ```
 
 ## Options
