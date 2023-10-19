@@ -1,6 +1,5 @@
 Certainly, here's the `README.md` content with improved formatting to make it easily copyable as markdown:
 
-```markdown
 # PaginatorJS
 
 PaginatorJS is a JavaScript library for paginating text using HTML canvas. It allows users to change the font, font size, line height, and more.
