@@ -85,3 +85,8 @@ body {
 #next {
   right: -20px;
 }
+
+.modify-text {
+  font-family: sans-serif;
+  font-size: 14px;
+}

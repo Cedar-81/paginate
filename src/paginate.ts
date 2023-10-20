@@ -100,3 +100,11 @@ function calculatePageText(newPosition: number) {
 export const loadNext = () => {
   calculatePageText(STRING_ARRAY_POSITION);
 };
+
+export function updateFontSize(newSize: string) {
+  FONTSIZE = Number(newSize);
+  CTX.font = CTX.font.replace(/\d+px/, `${newSize}px`);
+  calculatePageText(0);
+}
+
+
