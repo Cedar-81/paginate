@@ -86,7 +86,8 @@ body {
   right: -20px;
 }
 
-.modify-text {
+.modify{
   font-family: sans-serif;
   font-size: 14px;
+  padding: 10px;
 }
