@@ -5,12 +5,8 @@ let LINEHEIGHT;
 let WORDS;
 let CANVAS;
 let CTX;
-let IsPreviousClicked = false;
-
-//
-
-let ArrayPostionList =[]
-
+let IsPreviousClicked;
+let ArrayPostionList = [];
 export function paginate(stringToPaginate, lineHeight = 25, fontSize = 16, fontFamily = "Helvetica") {
     LINEHEIGHT = lineHeight;
     FONTSIZE = fontSize;
@@ -37,10 +33,6 @@ export function paginate(stringToPaginate, lineHeight = 25, fontSize = 16, fontF
     calculatePageText(STRING_ARRAY_POSITION);
 }
 function calculatePageText(newPosition) {
-    
-    
-    //Adding the current position
-    ArrayPostionList.push(newPosition)
     // Clear the entire canvas when creating new page
     CTX.clearRect(0, 0, CANVAS.width, CANVAS.height);
     // Define the maximum width of each line
@@ -48,12 +40,9 @@ function calculatePageText(newPosition) {
     // Define the starting position
     let x = 10;
     let y = 15;
-
     // slice the string array to contain texts that havent been displayed
     let modWords = WORDS.slice(newPosition);
     let line = "";
-
-   
     for (const word of modWords) {
         const testLine = line + (line === "" ? "" : " ") + word;
         const testLineMetrics = CTX.measureText(testLine);
@@ -72,9 +61,7 @@ function calculatePageText(newPosition) {
             y += LINEHEIGHT; // Adjust the line height as needed
             line = word; // Start a new line
         }
-        
-        if(!IsPreviousClicked){
-
+        if (!IsPreviousClicked) {
             STRING_ARRAY_POSITION++;
         }
     }
@@ -82,20 +69,18 @@ function calculatePageText(newPosition) {
     CTX.fillText(line, x, y);
 }
 export const loadNext = () => {
-    
-    if(WORDS.length > STRING_ARRAY_POSITION ){
-
+    if (WORDS.length > STRING_ARRAY_POSITION) {
         calculatePageText(STRING_ARRAY_POSITION);
-    }else{
-
+    }
+    else {
     }
 };
 export const loadPrev = () => {
-    IsPreviousClicked =true
-    if (STRING_ARRAY_POSITION !== 0){
-        calculatePageText(ArrayPostionList[ArrayPostionList.length-2]);
-    }else{
-        ArrayPostionList =[0]
+    IsPreviousClicked = true;
+    if (STRING_ARRAY_POSITION !== 0) {
+        calculatePageText(ArrayPostionList[ArrayPostionList.length - 2]);
     }
-    
+    else {
+        ArrayPostionList = [0];
+    }
 };
