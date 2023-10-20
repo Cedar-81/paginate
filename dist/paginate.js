@@ -5,6 +5,8 @@ let LINEHEIGHT;
 let WORDS;
 let CANVAS;
 let CTX;
+let IsPreviousClicked;
+let ArrayPostionList = [];
 export function paginate(stringToPaginate, lineHeight = 25, fontSize = 16, fontFamily = "Helvetica") {
     LINEHEIGHT = lineHeight;
     FONTSIZE = fontSize;
@@ -59,11 +61,26 @@ function calculatePageText(newPosition) {
             y += LINEHEIGHT; // Adjust the line height as needed
             line = word; // Start a new line
         }
-        STRING_ARRAY_POSITION++;
+        if (!IsPreviousClicked) {
+            STRING_ARRAY_POSITION++;
+        }
     }
     // Draw the last line
     CTX.fillText(line, x, y);
 }
 export const loadNext = () => {
-    calculatePageText(STRING_ARRAY_POSITION);
+    if (WORDS.length > STRING_ARRAY_POSITION) {
+        calculatePageText(STRING_ARRAY_POSITION);
+    }
+    else {
+    }
+};
+export const loadPrev = () => {
+    IsPreviousClicked = true;
+    if (STRING_ARRAY_POSITION !== 0) {
+        calculatePageText(ArrayPostionList[ArrayPostionList.length - 2]);
+    }
+    else {
+        ArrayPostionList = [0];
+    }
 };
