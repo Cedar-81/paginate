@@ -107,4 +107,9 @@ export function updateFontSize(newSize: string) {
   calculatePageText(0);
 }
 
+export function updateLineHeight(newHeight: string) {
+    LINEHEIGHT = Number(newHeight);
+    calculatePageText(0);
+}
+
 
