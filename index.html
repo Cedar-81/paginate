@@ -16,13 +16,21 @@
         </button>
         <!-- <div id="buttons">
         </div> -->
+        <div class="modify modify-size">
+          <input type="number" id="fontSize" name="fontSize" min="10" value="16" />
+          <label for="fontSize">Font Size</label>
+        </div>
+        <div class="modify modify-height">
+          <input type="number" id="lineHeight" name="lineHeight" min="0" value="25" />
+          <label for="lineHeight">Line Height</label>
+        </div>
       </div>
     </div>
   </body>
 </html>
 <!-- <script lang="ts" src="./dist/bundle.js"></script> -->
 <script type="module">
-  import { paginate, loadNext } from "./dist/index.mjs";
+  import { paginate, loadNext, updateFontSize, updateLineHeight } from "./dist/index.mjs";
   let my_string = `
     <h1>Lobortis</h1>
 
@@ -53,4 +61,7 @@
       rightButton.click();
     }
   });
+
+  document.getElementById("fontSize").addEventListener("change", (event) => updateFontSize(event.target.value));
+  document.getElementById("lineHeight").addEventListener("change", (event) => updateLineHeight(event.target.value));
 </script>
