@@ -1,1 +1,1 @@
-export { paginate, loadNext } from "./paginate";
+export { paginate, loadNext, updateFontSize, updateLineHeight} from "./paginate";
