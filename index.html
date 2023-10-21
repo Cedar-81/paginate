@@ -2,20 +2,27 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   </head>
   <body>
-    <div id="parentContainer" class="container">
-      <canvas id="paginate"> </canvas>
-      <div id="buttons">
-        <button id="prev">Previous Page</button>
-        <button id="next">Next Page</button>
+    <div id="parentContainer">
+      <div id="container">
+        <button id="prev">
+          <iconify-icon icon="fluent:previous-32-filled"></iconify-icon>
+        </button>
+        <canvas id="paginate"> </canvas>
+        <button id="next">
+          <iconify-icon icon="fluent:next-48-filled"></iconify-icon>
+        </button>
+        <!-- <div id="buttons">
+        </div> -->
       </div>
     </div>
   </body>
 </html>
 <!-- <script lang="ts" src="./dist/bundle.js"></script> -->
 <script type="module">
-  import { paginate, loadNext } from "./dist/paginate.js";
+  import { paginate, loadNext } from "./dist/index.mjs";
   let my_string = `
     <h1>Lobortis</h1>
 
@@ -34,4 +41,16 @@
   paginate(my_string, 25, 16, "Helvetica");
 
   document.getElementById("next").addEventListener("click", () => loadNext());
+
+  const leftButton = document.getElementById("prev");
+  const rightButton = document.getElementById("next");
+
+  document.addEventListener("keydown", function (event) {
+    if (event.keyCode === 37) {
+      leftButton.click();
+    }
+    if (event.keyCode === 39) {
+      rightButton.click();
+    }
+  });
 </script>

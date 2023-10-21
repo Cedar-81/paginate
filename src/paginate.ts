@@ -2,6 +2,7 @@ let STRING_ARRAY_POSITION: number = 0; // text string array positon
 let FONTSIZE: number;
 let FONTFAMILY: string;
 let LINEHEIGHT: number;
+let TEXTCOLOR: string;
 let WORDS: Array<string>;
 let CANVAS: HTMLCanvasElement;
 let CTX: CanvasRenderingContext2D;
@@ -10,11 +11,13 @@ export function paginate(
   stringToPaginate: string,
   lineHeight: number = 25,
   fontSize: number = 16,
-  fontFamily: string = "Helvetica"
+  fontFamily: string = "Helvetica",
+  textColor: string = "#a6adba"
 ) {
   LINEHEIGHT = lineHeight;
   FONTSIZE = fontSize;
   FONTFAMILY = fontFamily;
+  TEXTCOLOR = textColor;
 
   WORDS = stringToPaginate.split(" "); // the text to be paginated
 
@@ -40,7 +43,8 @@ export function paginate(
   canvas.width = canvas.offsetWidth;
   canvas.height = canvas.offsetHeight;
 
-  // Set font style and size
+  // Set font style
+  ctx.fillStyle = TEXTCOLOR;
   ctx.font = `${FONTSIZE}px ${FONTFAMILY}`;
 
   CANVAS = canvas;

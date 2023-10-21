@@ -24,10 +24,10 @@ Before you get started, make sure you have Node.js and npm (Node Package Manager
    cd Paginator
    ```
 
-3. Install the required development dependencies (TypeScript):
+3. Install the required development dependencies:
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 4. Compile TypeScript to JavaScript:
@@ -36,31 +36,27 @@ Before you get started, make sure you have Node.js and npm (Node Package Manager
    tsc
    ```
 
-   This will generate JavaScript files in the `dist` directory.
-
-5. Start a global HTTP server (e.g., [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML and JavaScript files:
+5. To run on dev server:
 
    ```bash
-   npm install -g http-server
-   http-server -c-1
+   pnpm run dev
    ```
 
-   The `-c-1` flag disables caching for development purposes.
+   This will generate mjs, js nd d.ts files in the `dist` directory from src/paginate.ts.
 
-6. Open your web browser and access your PaginatorJS page at `http://localhost:8080` or a different URL provided by your HTTP server.
+6. ****IMPORTANT:**** Do well to import all exported functions in the src/index.ts files so that it is compiled to mjs file on build
+
+7. Open your web browser and access your PaginatorJS page at `http://localhost:8080` or a different URL provided by your HTTP server.
 
 ## Usage
 
 To use PaginatorJS in your own HTML project, include the generated JavaScript file in your HTML, and follow the usage instructions mentioned in the previous README example.
 
-```html
-<script src="./dist/paginator.js"></script>
-```
-
 ## Options
 
 - `font`: The font to use.
 - `fontSize`: The font size.
+- `fontColor`: The font color.
 - `lineHeight`: The line height.
 - Add more options and their descriptions here.
 

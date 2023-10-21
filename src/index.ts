@@ -1,1 +1,1 @@
-export { paginate } from "./paginate";
+export { paginate, loadNext } from "./paginate";
