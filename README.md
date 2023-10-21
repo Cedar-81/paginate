@@ -56,8 +56,8 @@ To use PaginatorJS in your own HTML project, include the generated JavaScript fi
 
 ## Contributing
 
-If you would like to contribute to PaginatorJS, please follow our [contributing guidelines](CONTRIBUTING.md).
+If you would like to contribute to PaginatorJS, please follow our [contributing guidelines](Contributing.md).
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for details.
