@@ -67,14 +67,3 @@ function calculatePageText(newPosition) {
 export const loadNext = () => {
     calculatePageText(STRING_ARRAY_POSITION);
 };
-
-export function updateFontSize(newSize) {
-  FONTSIZE = Number(newSize);
-  CTX.font = CTX.font.replace(/\d+px/, `${newSize}px`);
-  calculatePageText(0);
-}
-
-export function updateLineHeight(newHeight) {
-  LINEHEIGHT = Number(newHeight);
-  calculatePageText(0);
-}
