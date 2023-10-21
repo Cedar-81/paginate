@@ -86,8 +86,24 @@ body {
   right: -20px;
 }
 
+
 .modify{
+  display: inline-block;
   font-family: sans-serif;
   font-size: 14px;
-  padding: 10px;
+  padding: 1rem;
+  color: rgb(0, 255, 255);
+  position: relative;
+  left: 50px;
+}
+
+.modify input {
+  width: 5rem;
+  height: 1.75rem;
+  margin-bottom: 0.5rem;
+  border: 2px solid rgba(0, 255, 255, 0.439);
+  border-radius: 5px;
+  background-color: var(--dark-base-200);
+  color: #f1f1f1;
+  padding: 0 0.5rem;
 }
