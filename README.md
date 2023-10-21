@@ -30,13 +30,7 @@ Before you get started, make sure you have Node.js and npm (Node Package Manager
    pnpm install
    ```
 
-4. Compile TypeScript to JavaScript:
-
-   ```bash
-   tsc
-   ```
-
-5. To run on dev server:
+4. To run on dev server:
 
    ```bash
    pnpm run dev
@@ -44,9 +38,9 @@ Before you get started, make sure you have Node.js and npm (Node Package Manager
 
    This will generate mjs, js nd d.ts files in the `dist` directory from src/paginate.ts.
 
-6. ****IMPORTANT:**** Do well to import all exported functions in the src/index.ts files so that it is compiled to mjs file on build
+5. ****IMPORTANT:**** Do well to import all exported functions in the src/index.ts files so that it is compiled to mjs file on build
 
-7. Open your web browser and access your PaginatorJS page at `http://localhost:8080` or a different URL provided by your HTTP server.
+6. Open your web browser and access your PaginatorJS page at `http://localhost:8080` or a different URL provided by your HTTP server.
 
 ## Usage
 
