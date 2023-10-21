@@ -5,6 +5,8 @@ let LINEHEIGHT: number;
 let WORDS: Array<string>;
 let CANVAS: HTMLCanvasElement;
 let CTX: CanvasRenderingContext2D;
+let IsPreviousClicked: boolean;
+let ArrayPostionList: number[] = [];
 
 export function paginate(
   stringToPaginate: string,
@@ -50,6 +52,8 @@ export function paginate(
 }
 
 function calculatePageText(newPosition: number) {
+  //adding new position
+  ArrayPostionList.push(newPosition)
   // Clear the entire canvas when creating new page
   CTX.clearRect(0, 0, CANVAS.width, CANVAS.height);
 
@@ -86,7 +90,10 @@ function calculatePageText(newPosition: number) {
       line = word; // Start a new line
     }
 
-    STRING_ARRAY_POSITION++;
+    if(!IsPreviousClicked){
+
+      STRING_ARRAY_POSITION++;
+  }
   }
 
   // Draw the last line
@@ -94,5 +101,21 @@ function calculatePageText(newPosition: number) {
 }
 
 export const loadNext = () => {
-  calculatePageText(STRING_ARRAY_POSITION);
+  console.log(ArrayPostionList)
+  if(WORDS.length > STRING_ARRAY_POSITION ){
+
+    calculatePageText(STRING_ARRAY_POSITION);
+}else{
+
+}
+};
+export const loadPrev = () => {
+
+  IsPreviousClicked =true
+  if (STRING_ARRAY_POSITION !== 0){
+      calculatePageText(ArrayPostionList[ArrayPostionList.length-2]);
+  }else{
+      ArrayPostionList =[0]
+  }
+  
 };

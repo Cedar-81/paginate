@@ -15,7 +15,7 @@
 </html>
 <!-- <script lang="ts" src="./dist/bundle.js"></script> -->
 <script type="module">
-  import { paginate, loadNext } from "./dist/paginate.js";
+  import { paginate, loadNext,loadPrev } from "./dist/paginate.js";
   let my_string = `
     <h1>Lobortis</h1>
 
@@ -34,4 +34,5 @@
   paginate(my_string, 25, 16, "Helvetica");
 
   document.getElementById("next").addEventListener("click", () => loadNext());
+  document.getElementById("prev").addEventListener("click", () => loadPrev());
 </script>
